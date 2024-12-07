@@ -1,73 +1,107 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Quickbet Movies - Desarrollador Fullstack
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Descripción del Proyecto
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Este proyecto corresponde a una prueba técnica para evaluar las habilidades de un desarrollador **Fullstack**. La aplicación consta de dos partes principales: el **frontend** y el **backend**.
 
-## Description
+- **Frontend**: Desarrollado en **Next.js** con **TypeScript** basado en un diseño proporcionado en **Figma**.
+- **Backend**: Desarrollado con **Node.js** y **Express**, que proporciona APIs para la autenticación de usuarios y la consulta de películas utilizando datos de **The Movie Database (TMDB)**.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+---
 
-## Installation
+## Configuración Inicial
 
-```bash
-$ pnpm install
-```
+### 1. Clona el Repositorio
 
-## Running the app
+Comienza por clonar el repositorio en tu máquina local usando el siguiente comando:
 
-```bash
-# development
-$ pnpm run start
+git clone <URL_DEL_REPOSITORIO>
+cd backend-challenge-base
 
-# watch mode
-$ pnpm run start:dev
+### 2. Crea el Archivo de Configuración
+Dentro del directorio principal del proyecto, renombra el archivo .env.example a .env para que contenga las configuraciones de entorno necesarias para ejecutar el proyecto.
 
-# production mode
-$ pnpm run start:prod
-```
 
-## Test
+### 3. Configura las Variables de Entorno
+Abre el archivo .env en tu editor de texto preferido y configura las siguientes variables:
 
-```bash
-# unit tests
-$ pnpm run test
 
-# e2e tests
-$ pnpm run test:e2e
+APP_PORT=3001
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=postgres
+DB_PASSWORD=0898
+DB_NAME=movies
+JWT_SECRET=loquemioclarose
 
-# test coverage
-$ pnpm run test:cov
-```
+Descripción de las Variables
 
-## Support
+APP_PORT: El puerto en el que se ejecutará la API del backend (default: 3001).
+DB_HOST: La dirección del servidor de la base de datos (default: localhost).
+DB_PORT: El puerto en el que la base de datos escucha (default: 5432).
+DB_USERNAME: El nombre de usuario para acceder a la base de datos (default: postgres).
+DB_PASSWORD: La contraseña asociada con el nombre de usuario de la base de datos (default: 0898).
+DB_NAME: El nombre de la base de datos utilizada por la aplicación (default: movies).
+JWT_SECRET: La clave secreta utilizada para firmar y verificar los tokens JWT, que se utiliza en la autenticación.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### 4. Configuración de la Base de Datos
+Asegúrate de tener PostgreSQL instalado en tu máquina y de crear una base de datos con el nombre especificado en las variables de entorno (movies). Si aún no tienes PostgreSQL instalado, puedes descargarlo e instalarlo desde su página oficial.
 
-## Stay in touch
+Para crear la base de datos, abre una terminal y ejecuta los siguientes comandos (asegurándote de estar en el entorno de PostgreSQL):
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
+psql -U postgres
+CREATE DATABASE movies;
 
-Nest is [MIT licensed](LICENSE).
+### 5. Instalación de Dependencias
+Una vez que hayas configurado las variables de entorno, navega hasta la carpeta raíz del proyecto (si no lo has hecho ya) y ejecuta el siguiente comando para instalar todas las dependencias necesarias:
+
+npm install
+
+### 6. Ejecuta la Aplicación
+Para iniciar el servidor de desarrollo, utiliza el siguiente comando:
+npm run start:dev
+Este comando iniciará el servidor en el puerto 3001 o el que hayas configurado en la variable APP_PORT de las variables de entorno.
+
+### 8. Accede a la API
+Una vez que el servidor esté en ejecución, podrás acceder a la API a través de http://localhost:3001/api en tu navegador.
+
+### 9. Prueba los Endpoints de la API
+Endpoint para Registro de Usuario (Sign Up)
+POST /users/signUp
+Body:
+json
+Copy code
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+Endpoint para Iniciar Sesión (Login)
+POST /users/login
+Body:
+json
+Copy code
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+
+Si el login es exitoso, el servidor retornará un token JWT.
+
+Endpoint para Filtrar Películas
+GET /movies
+
+Parámetros:
+genres: Géneros de las películas (separados por coma).
+popularity: Valor booleano para indicar si se desea filtrar por popularidad.
+page: Número de página para paginar los resultados.
+Ejemplo de uso:
+
+
+http://localhost:3001/movies?genres=action,comedy&popularity=true&page=1
+Endpoint para Buscar Película por Nombre
+GET /movies/{name}
+
+Parámetros:
+name: Nombre de la película a buscar.
+
