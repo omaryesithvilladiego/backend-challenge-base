@@ -70,8 +70,6 @@ Una vez que el servidor esté en ejecución, podrás acceder a la API a través 
 Endpoint para Registro de Usuario (Sign Up)
 POST /users/signUp
 Body:
-json
-Copy code
 {
   "email": "user@example.com",
   "password": "password123"
@@ -79,8 +77,6 @@ Copy code
 Endpoint para Iniciar Sesión (Login)
 POST /users/login
 Body:
-json
-Copy code
 {
   "email": "user@example.com",
   "password": "password123"
