@@ -1,9 +1,6 @@
 # Quickbet Movies - Desarrollador Fullstack
 
 ## Descripción del Proyecto
-
-Este proyecto corresponde a una prueba técnica para evaluar las habilidades de un desarrollador **Fullstack**. La aplicación consta de dos partes principales: el **frontend** y el **backend**.
-
 - **Frontend**: Desarrollado en **Next.js** con **TypeScript** basado en un diseño proporcionado en **Figma**.
 - **Backend**: Desarrollado con **Node.js** y **Express**, que proporciona APIs para la autenticación de usuarios y la consulta de películas utilizando datos de **The Movie Database (TMDB)**.
 
