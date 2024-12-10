@@ -1,11 +1,20 @@
-import { Controller, Get, Param, Query, BadRequestException } from "@nestjs/common";
+import {
+  Controller,
+  Get,
+  Param,
+  Query,
+  BadRequestException,
+  UseInterceptors,
+} from "@nestjs/common";
 import { MoviesService } from "./movies.service";
+import { PopularityInterceptor } from "./interceptors/popularity.interceptor";
 
 @Controller("movies")
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
 
   @Get()
+  @UseInterceptors(PopularityInterceptor)
   async findAll(
     @Query("genres") genres: string = "",
     @Query("popularity") popularity: boolean = true,
