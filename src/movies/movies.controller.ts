@@ -38,6 +38,7 @@ export class MoviesController {
     }
   }
 
+  @UseInterceptors(PopularityInterceptor)
   @Get(":name")
   async getMoviesByName(@Param("name") name: string) {
     try {
